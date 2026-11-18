@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TAPHY JOBS 💼🔥 | Tafuta Kazi Homabay - Apply Free!</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#f0f7ff;color:#111;padding-bottom:80px}
+header{background:linear-gradient(135deg,#003366,#0066cc);color:white;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20}
+header b{font-size:18px}
+header button{background:white;color:#003366;border:none;padding:8px 14px;border-radius:20px;font-weight:bold;cursor:pointer}
+.hero{padding:20px 16px;text-align:center}
+.hero h1{font-size:30px;line-height:1.1}
+.hero h1 span{color:#0066cc}
+.hero p{color:#888;font-size:13px;margin:8px 0}
+.search{background:white;border-radius:16px;padding:14px;margin:0 16px;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
+.search input,.search select{width:100%;padding:12px;border-radius:12px;border:1px solid #ddd;margin:6px 0;outline:none}
+.search button{width:100%;padding:13px;border:none;border-radius:12px;background:#0066cc;color:white;font-weight:bold;cursor:pointer}
+.tabs{display:flex;gap:8px;padding:14px 16px;overflow-x:auto}
+.tabs button{background:white;border:1px solid #ddd;padding:10px 16px;border-radius:20px;white-space:nowrap;cursor:pointer;font-weight:bold}
+.tabs button.active{background:#0066cc;color:white}
+.job{background:white;border-radius:18px;padding:16px;margin:0 16px 12px;box-shadow:0 2px 10px rgba(0,0,0,0.08);cursor:pointer}
+.job:active{transform:scale(0.99)}
+.job .top{display:flex;gap:12px;align-items:center}
+.job .logo{width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;color:white;flex-shrink:0}
+.job b{font-size:15px;display:block}
+.job p{font-size:12px;color:#888;margin:3px 0}
+.job .tags{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
+.job .tags span{background:#eef5ff;color:#0066cc;padding:4px 10px;border-radius:15px;font-size:11px;font-weight:bold}
+.job .salary{color:#00a651;font-weight:bold;font-size:15px}
+.job button{background:#111;color:white;border:none;padding:9px 16px;border-radius:20px;font-weight:bold;cursor:pointer;margin-top:8px}
+.card{background:white;border-radius:18px;padding:16px;margin:0 16px 12px;box-shadow:0 2px 10px rgba(0,0,0,0.08)}
+.card h3{margin-bottom:8px}
+.card p{font-size:13px;color:#666;line-height:1.6}
+.bottom-nav{position:fixed;bottom:0;left:0;width:100%;background:white;border-top:1px solid #ddd;padding:10px;display:flex;justify-content:space-around;font-size:11px;z-index:30}
+.bottom-nav div{text-align:center;cursor:pointer;color:#888}
+.bottom-nav div.active{color:#0066cc;font-weight:bold}
+.bottom-nav div span{display:block;font-size:22px}
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:99;justify-content:center;align-items:flex-end}
+.modalBox{background:white;width:100%;max-width:500px;border-radius:20px 20px 0 0;padding:20px;max-height:85vh;overflow-y:auto}
+.modalBox button{padding:11px 16px;border-radius:10px;border:none;font-weight:bold;cursor:pointer;margin:5px}
+.modalBox input,.modalBox select,.modalBox textarea{width:100%;padding:12px;border-radius:12px;border:1px solid #ddd;margin:6px 0;outline:none}
+</style>
+</head>
+<body>
+
+<header><b>💼 TAPHY JOBS</b><button onclick="showToast('🔥 50+ Jobs Homabay!')">🔥 50+ Jobs</button></header>
+
+<div class="hero">
+<h1>Tafuta Kazi<br><span>Leo! 💼🔥</span></h1>
+<p>Best Jobs Homabay! • Apply Free • No Agent Fee!<br>📍 Homabay Town • 🟢 50+ Jobs Available!</p>
+</div>
+
+<div class="search">
+<h3>🔍 Search Kazi</h3>
+<input type="text" placeholder="Kazi gani? e.g. Driver, Teacher, Cook">
+<select><option>Homabay Town</option><option>Soko Mjinga</option><option>Kendubay</option><option>Oyugis</option></select>
+<button onclick="showToast('🔍 Found 12 jobs Homabay!')">Search Jobs →</button>
+</div>
+
+<div class="tabs">
+<button class="active" onclick="filterJob(this)">💼 All</button>
+<button onclick="filterJob(this)">🚗 Driver</button>
+<button onclick="filterJob(this)">👨‍🏫 Teacher</button>
+<button onclick="filterJob(this)">🍳 Cook</button>
+<button onclick="filterJob(this)">💻 IT</button>
+<button onclick="filterJob(this)">🏪 Shop</button>
+</div>
+
+<div class="job" onclick="applyJob('Boda Rider - Taphy Boda','🛵')">
+<div class="top"><div class="logo" style="background:#ff0055">🛵</div><div style="flex:1"><b>Boda Rider</b><p>Taphy Boda • Homabay Town</p></div><b style="color:#00a651">Ksh 800/day</b></div>
+<div class="tags"><span>Full-time</span><span>Daily Pay</span><span>No Experience</span></div>
+<p>⏰ Posted 2 hrs ago • 👁️ 120 views • 🟢 Hiring Now!</p>
+<button>Apply Now →</button>
+</div>
+
+<div class="job" onclick="applyJob('Shop Attendant - Soko Mjinga Shop','🏪')">
+<div class="top"><div class="logo" style="background:#0066cc">🏪</div><div style="flex:1"><b>Shop Attendant</b><p>Soko Mjinga Shop • Soko Mjinga</p></div><b style="color:#00a651">Ksh 15,000/mo</b></div>
+<div class="tags"><span>Full-time</span><span>Morning Shift</span></div>
+<p>⏰ Posted 5 hrs ago • 👁️ 80 views • 🟢 Hiring Now!</p>
+<button>Apply Now →</button>
+</div>
+
+<div class="job" onclick="applyJob('Teacher - PEFA School','👨‍🏫')">
+<div class="top"><div class="logo" style="background:#00a651">👨‍🏫</div><div style="flex:1"><b>Teacher - Maths / English</b><p>PEFA School • Homabay</p></div><b style="color:#00a651">Ksh 20,000/mo</b></div>
+<div class="tags"><span>Full-time</span><span>Certificate</span></div>
+<p>⏰ Posted 1 day ago • 👁️ 200 views</p>
+<button>Apply Now →</button>
+</div>
+
+<div class="job" onclick="applyJob('Cook - Taphy Hotel','🍳')">
+<div class="top"><div class="logo" style="background:#ff6600">🍳</div><div style="flex:1"><b>Cook</b><p>Taphy Hotel • Homabay Town</p></div><b style="color:#00a651">Ksh 12,000/mo</b></div>
+<div class="tags"><span>Full-time</span><span>Free Food</span></div>
+<p>⏰ Posted 3 hrs ago • 👁️ 95 views • 🟢 Hiring Now!</p>
+<button>Apply Now →</button>
+</div>
+
+<div class="job" onclick="applyJob('Photographer - Taphy Photo','📸')">
+<div class="top"><div class="logo" style="background:#6c5ce7">📸</div><div style="flex:1"><b>Photographer</b><p>Taphy Photo • Homabay Town</p></div><b style="color:#00a651">Ksh 1,000/shoot</b></div>
+<div class="tags"><span>Part-time</span><span>Flexible</span></div>
+<p>⏰ Posted 6 hrs ago • 👁️ 60 views</p>
+<button>Apply Now →</button>
+</div>
+
+<div class="job" onclick="applyJob('Driver - Taphy Delivery','🚗')">
+<div class="top"><div class="logo" style="background:#00a884">🚗</div><div style="flex:1"><b>Driver - Delivery</b><p>Taphy Delivery • Homabay</p></div><b style="color:#00a651">Ksh 25,000/mo</b></div>
+<div class="tags"><span>Full-time</span><span>License Required</span></div>
+<p>⏰ Posted 1 hr ago • 👁️ 150 views • 🟢 Hiring Now!</p>
+<button>Apply Now →</button>
+</div>
+
+<div class="card" style="background:linear-gradient(135deg,#003366,#0066cc);color:white;border:none">
+<h3>📝 Post a Job - FREE!</h3>
+<p style="color:#fff">Unatafuta mfanyakazi? Post job yako FREE, watu 2,000+ wataiona!</p>
+<button style="background:white;color:#003366;border:none;padding:12px;border-radius:12px;font-weight:bold;cursor:pointer;width:100%;margin-top:10px" onclick="postJob()">Post Job FREE →</button>
+</div>
+
+<div class="card">
+<h3>💡 Tips za Kupata Kazi Haraka</h3>
+<p>✅ <b>Apply mapema</b> - Jobs zinaisha haraka!<br>✅ <b>Andika CV fupi</b> - Jina, skills, phone<br>✅ <b>Kuwa honest</b> - Usiandike uongo<br>✅ <b>Follow up</b> - Piga simu baada ya 2 siku</p>
+</div>
+
+<div style="text-align:center;color:#888;font-size:12px;padding:10px">Taphy Jobs • Homabay • 📞 0700 123 456<br>Made by Taphy Samson 🇰🇪 • No Agent Fee!</div>
+
+<div class="bottom-nav">
+<div class="active"><span>🏠</span>Home</div>
+<div onclick="applyJob('Boda Rider','🛵')"><span>💼</span>Jobs</div>
+<div onclick="postJob()"><span>📝</span>Post Job</div>
+<div onclick="showToast('⭐ Saved: 3 jobs!')"><span>⭐</span>Saved</div>
+<div onclick="showToast('📞 Call: 0700 123 456')"><span>📞</span>Call</div>
+</div>
+
+<div class="modal" id="modal"><div class="modalBox"><div id="modalContent"></div><button style="background:#333;color:white;width:100%" onclick="closeModal()">Close ✕</button></div></div>
+<div id="toast" style="position:fixed;top:70px;left:50%;transform:translateX(-50%);background:#111;color:white;padding:10px 18px;border-radius:20px;font-weight:bold;font-size:13px;z-index:100;display:none"></div>
+
+<script>
+function showToast(m){ let t=document.getElementById('toast'); t.innerText=m; t.style.display='block'; setTimeout(()=>t.style.display='none',2500); }
+function filterJob(btn){ document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); showToast('💼 Showing '+btn.innerText); }
+function applyJob(job,emoji){
+  document.getElementById('modalContent').innerHTML='<div style="text-align:center"><div style="font-size:60px">'+emoji+'</div><h2>'+job+'</h2><p style="color:#888;margin:8px 0;line-height:1.6">Apply in 1 min! No CV needed!</p></div><input placeholder="Jina lako..."><input placeholder="Phone..."><input placeholder="Age..."><select><option>Form 4</option><option>Certificate</option><option>Diploma</option><option>Degree</option></select><textarea placeholder="Ujuzi wako... e.g. Naweza kuendesha boda, nina license" rows="3"></textarea><button style="background:#0066cc;color:white;width:100%;padding:13px" onclick="closeModal();showToast(\'🎉 Application Sent! Watakutafuta!\')">Send Application →</button><p style="font-size:11px;color:#888;text-align:center;margin-top:8px">Free • No agent fee • Watakutafuta in 2 days</p>';
+  document.getElementById('modal').style.display='flex';
+}
+function postJob(){
+  document.getElementById('modalContent').innerHTML='<h2>📝 Post a Job - FREE</h2><input placeholder="Job Title... e.g. Shop Attendant"><input placeholder="Company..."><input placeholder="Salary... e.g. Ksh 15,000/mo"><select><option>Homabay Town</option><option>Soko Mjinga</option><option>Kendubay</option></select><textarea placeholder="Job Description..." rows="3"></textarea><button style="background:#0066cc;color:white;width:100%;padding:13px" onclick="closeModal();showToast(\'🎉 Job Posted! Watu 2,000+ wataiona!\')">Post Job →</button>';
+  document.getElementById('modal').style.display='flex';
+}
+function closeModal(){ document.getElementById('modal').style.display='none'; }
+</script>
+</body>
+</html>
